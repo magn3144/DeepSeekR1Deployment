@@ -1,0 +1,45 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "QwenGRPO"
+version = "0.0.1"
+description = "Training qwen model with GRPO"
+authors = [
+  { name = "magn3144" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+dependencies = [
+    "trl",
+    "latex2sympy2-extended",
+    "math-verify",
+    "torch",
+    "loguru",
+    "pip",
+    "pytest",
+    "python-dotenv",
+    "ruff",
+    "tqdm",
+    "typer",
+]
+requires-python = "==3.13.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["QwenGRPO"]
+include = ["pyproject.toml", "QwenGRPO/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["QwenGRPO"]
+force-sort-within-sections = true
+
